@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { FiMail, FiPhone, FiArrowUpRight, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiPhone, FiArrowUpRight, FiGithub } from 'react-icons/fi';
 import { HiOutlineMapPin } from 'react-icons/hi2';
 import { gsap, ScrollTrigger, EASE } from '../animations/gsap';
 
@@ -15,20 +15,20 @@ export default function Contact() {
     const ctx = gsap.context(() => {
       // Watermark
       gsap.fromTo(watermarkRef.current,
-        { clipPath: 'inset(0 100% 0 0)', scale: 1.08, opacity: 0 },
+        { clipPath: 'inset(0 100% 0 0)', scale: 1.04, opacity: 0 },
         {
           clipPath: 'inset(0 0% 0 0)', scale: 1, opacity: 1,
-          duration: 1.3, ease: EASE.inOut,
+          duration: 0.8, ease: EASE.inOut,
           scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', toggleActions: 'play none none none' },
         }
       );
 
       // Header
       gsap.fromTo(headerRef.current,
-        { y: 60, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 1, ease: EASE.out,
-          scrollTrigger: { trigger: headerRef.current, start: 'top 82%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.65, ease: EASE.out,
+          scrollTrigger: { trigger: headerRef.current, start: 'top 86%', toggleActions: 'play none none none' },
         }
       );
 
@@ -36,21 +36,21 @@ export default function Contact() {
       const cards = cardsRef.current.filter(Boolean);
       if (cards.length) {
         gsap.fromTo(cards,
-          { y: 50, opacity: 0, scale: 0.94 },
+          { y: 30, opacity: 0, scale: 0.96 },
           {
             y: 0, opacity: 1, scale: 1,
-            duration: 0.75, ease: EASE.out, stagger: 0.12,
-            scrollTrigger: { trigger: cards[0], start: 'top 90%', toggleActions: 'play none none none' },
+            duration: 0.5, ease: EASE.out, stagger: 0.08,
+            scrollTrigger: { trigger: cards[0], start: 'top 92%', toggleActions: 'play none none none' },
           }
         );
       }
 
       // CTA buttons
       gsap.fromTo(ctaRef.current,
-        { y: 30, opacity: 0 },
+        { y: 20, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.8, ease: EASE.out,
-          scrollTrigger: { trigger: ctaRef.current, start: 'top 92%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.5, ease: EASE.out,
+          scrollTrigger: { trigger: ctaRef.current, start: 'top 94%', toggleActions: 'play none none none' },
         }
       );
 
@@ -58,7 +58,7 @@ export default function Contact() {
       gsap.fromTo(footerRef.current,
         { opacity: 0 },
         {
-          opacity: 1, duration: 1,
+          opacity: 1, duration: 0.6,
           scrollTrigger: { trigger: footerRef.current, start: 'top 98%', toggleActions: 'play none none none' },
         }
       );
@@ -134,7 +134,7 @@ export default function Contact() {
             { icon: <FiMail size={22} />, label: '邮箱', value: 'minghui031122@163.com', href: 'mailto:minghui031122@163.com' },
             { icon: <FiPhone size={22} />, label: '电话', value: '17766326016', href: 'tel:17766326016' },
             { icon: <HiOutlineMapPin size={22} />, label: '所在地', value: '江苏省无锡市', href: null },
-            { icon: <FiMapPin size={22} />, label: '籍贯', value: '山东省菏泽市', href: null },
+            { icon: <FiGithub size={22} />, label: 'GitHub', value: 'github.com/superlongcater', href: 'https://github.com/superlongcater' },
           ].map((item, idx) => {
             const card = (
               <div ref={el => { cardsRef.current[idx] = el; }} className="card-base" key={item.label} style={{

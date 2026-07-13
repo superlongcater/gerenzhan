@@ -5,15 +5,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ── Shared easing (no bounce, no elastic — smooth premium feel) ──
 export const EASE = {
-  out: 'power4.out',
-  inOut: 'power3.inOut',
+  out: 'power3.out',
+  inOut: 'power2.inOut',
   expo: 'expo.out',
-  slow: 'power3.out',
+  slow: 'power2.out',
 };
 
 // ── ScrollTrigger defaults ──
 const ST_DEFAULTS = {
-  start: 'top 88%',
+  start: 'top 92%',
   toggleActions: 'play none none none',
 };
 
@@ -25,7 +25,7 @@ export function animateIn(el, vars = {}, scrollVars = {}) {
   return gsap.fromTo(el,
     { y: 60, opacity: 0, ...vars },
     {
-      y: 0, opacity: 1, duration: 0.9, ease: EASE.out,
+      y: 0, opacity: 1, duration: 0.6, ease: EASE.out,
       scrollTrigger: { trigger: el, ...ST_DEFAULTS, ...scrollVars },
       ...vars,
     }
@@ -41,8 +41,8 @@ export function staggerIn(els, vars = {}, scrollVars = {}) {
     { y: 50, opacity: 0, scale: 0.94, ...vars },
     {
       y: 0, opacity: 1, scale: 1,
-      duration: 0.8, ease: EASE.out,
-      stagger: 0.1,
+      duration: 0.55, ease: EASE.out,
+      stagger: 0.07,
       scrollTrigger: { trigger: els[0], ...ST_DEFAULTS, ...scrollVars },
     }
   );
@@ -59,7 +59,7 @@ export function clipRevealY(container, vars = {}, scrollVars = {}) {
   gsap.set(inner, { y: '105%' });
   return gsap.to(inner, {
     y: '0%',
-    duration: 1.1,
+    duration: 0.75,
     ease: EASE.inOut,
     scrollTrigger: { trigger: container, ...ST_DEFAULTS, ...scrollVars },
     ...vars,
@@ -76,7 +76,7 @@ export function clipRevealX(container, vars = {}, scrollVars = {}) {
   gsap.set(inner, { x: '-102%' });
   return gsap.to(inner, {
     x: '0%',
-    duration: 1.1,
+    duration: 0.75,
     ease: EASE.inOut,
     scrollTrigger: { trigger: container, ...ST_DEFAULTS, ...scrollVars },
     ...vars,

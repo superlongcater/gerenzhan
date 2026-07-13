@@ -45,20 +45,20 @@ export default function Strengths() {
     const ctx = gsap.context(() => {
       // Watermark
       gsap.fromTo(watermarkRef.current,
-        { clipPath: 'inset(0 100% 0 0)', scale: 1.08, opacity: 0 },
+        { clipPath: 'inset(0 100% 0 0)', scale: 1.04, opacity: 0 },
         {
           clipPath: 'inset(0 0% 0 0)', scale: 1, opacity: 1,
-          duration: 1.3, ease: EASE.inOut,
+          duration: 0.8, ease: EASE.inOut,
           scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', toggleActions: 'play none none none' },
         }
       );
 
       // Header
       gsap.fromTo(headerRef.current,
-        { y: 50, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.9, ease: EASE.out,
-          scrollTrigger: { trigger: headerRef.current, start: 'top 85%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.6, ease: EASE.out,
+          scrollTrigger: { trigger: headerRef.current, start: 'top 88%', toggleActions: 'play none none none' },
         }
       );
 
@@ -66,11 +66,11 @@ export default function Strengths() {
       const cards = cardRefs.current.filter(Boolean);
       if (cards.length) {
         gsap.fromTo(cards,
-          { y: 50, opacity: 0, scale: 0.92 },
+          { y: 30, opacity: 0, scale: 0.95 },
           {
             y: 0, opacity: 1, scale: 1,
-            duration: 0.75, ease: EASE.out, stagger: 0.1,
-            scrollTrigger: { trigger: cards[0], start: 'top 92%', toggleActions: 'play none none none' },
+            duration: 0.5, ease: EASE.out, stagger: 0.06,
+            scrollTrigger: { trigger: cards[0], start: 'top 94%', toggleActions: 'play none none none' },
           }
         );
       }

@@ -22,8 +22,8 @@ export default function Navbar() {
   // Opening animation — navbar slides down
   useEffect(() => {
     gsap.fromTo(headerRef.current,
-      { y: -80, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, delay: 0.6, ease: 'power4.out' }
+      { y: -60, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, delay: 0.4, ease: 'power3.out' }
     );
   }, []);
 
@@ -36,7 +36,7 @@ export default function Navbar() {
         background: scrolled ? 'rgba(6, 6, 14, 0.85)' : 'transparent',
         backdropFilter: scrolled ? 'blur(20px) saturate(1.2)' : 'none',
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
-        transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+        transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
         opacity: 0,
       }}
     >

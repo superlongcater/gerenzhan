@@ -36,20 +36,20 @@ export default function Projects() {
     const ctx = gsap.context(() => {
       // Watermark
       gsap.fromTo(watermarkRef.current,
-        { clipPath: 'inset(0 100% 0 0)', scale: 1.08, opacity: 0 },
+        { clipPath: 'inset(0 100% 0 0)', scale: 1.04, opacity: 0 },
         {
           clipPath: 'inset(0 0% 0 0)', scale: 1, opacity: 1,
-          duration: 1.3, ease: EASE.inOut,
+          duration: 0.8, ease: EASE.inOut,
           scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', toggleActions: 'play none none none' },
         }
       );
 
       // Header
       gsap.fromTo(headerRef.current,
-        { y: 50, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.9, ease: EASE.out,
-          scrollTrigger: { trigger: headerRef.current, start: 'top 85%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.6, ease: EASE.out,
+          scrollTrigger: { trigger: headerRef.current, start: 'top 88%', toggleActions: 'play none none none' },
         }
       );
 
@@ -57,11 +57,11 @@ export default function Projects() {
       const cards = cardRefs.current.filter(Boolean);
       cards.forEach((card, i) => {
         gsap.fromTo(card,
-          { clipPath: 'inset(0 0 100% 0)', y: 40, opacity: 0 },
+          { clipPath: 'inset(0 0 100% 0)', y: 25, opacity: 0 },
           {
             clipPath: 'inset(0 0 0% 0)', y: 0, opacity: 1,
-            duration: 0.9, ease: EASE.inOut, delay: i * 0.18,
-            scrollTrigger: { trigger: card, start: 'top 92%', toggleActions: 'play none none none' },
+            duration: 0.6, ease: EASE.inOut, delay: i * 0.12,
+            scrollTrigger: { trigger: card, start: 'top 94%', toggleActions: 'play none none none' },
           }
         );
       });
@@ -195,7 +195,7 @@ export default function Projects() {
                     height: isExpanded ? 'auto' : 0,
                     opacity: isExpanded ? 1 : 0,
                   }}
-                  transition={{ duration: 0.35, ease: 'easeInOut' }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
                   style={{ overflow: 'hidden' }}
                 >
                   <div style={{

@@ -22,60 +22,60 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: EASE.out } });
 
-      // 0.15s - Pinyin background text: clip reveal from bottom
+      // 0.1s - Pinyin background text: clip reveal from bottom
       tl.fromTo(pinyinRef.current,
         { clipPath: 'inset(0 0 100% 0)', y: 40 },
-        { clipPath: 'inset(0 0 0% 0)', y: 0, duration: 1.4, ease: EASE.inOut },
-        0.15
+        { clipPath: 'inset(0 0 0% 0)', y: 0, duration: 1, ease: EASE.inOut },
+        0.1
       );
 
-      // 0.5s - Label: clip reveal from right
+      // 0.25s - Label: clip reveal from right
       tl.fromTo(labelRef.current,
         { clipPath: 'inset(0 100% 0 0)', opacity: 0 },
-        { clipPath: 'inset(0 0% 0 0)', opacity: 1, duration: 0.9 },
-        0.5
+        { clipPath: 'inset(0 0% 0 0)', opacity: 1, duration: 0.55 },
+        0.25
       );
 
-      // 0.7s - Line 1 characters: y reveal stagger
+      // 0.4s - Line 1 characters: y reveal stagger
       const l1 = line1CharsRef.current.filter(Boolean);
       const l2 = line2CharsRef.current.filter(Boolean);
       const l3 = line3CharsRef.current.filter(Boolean);
 
       if (l1.length) {
         tl.to(l1, {
-          y: '0%', duration: 0.7, stagger: 0.04, ease: EASE.out,
-        }, 0.7);
+          y: '0%', duration: 0.5, stagger: 0.03, ease: EASE.out,
+        }, 0.4);
       }
 
-      // 1.0s - Line 2 + Line 3 (gradient) characters
+      // 0.6s - Line 2 + Line 3 (gradient) characters
       if (l2.length) {
         tl.to(l2, {
-          y: '0%', duration: 0.7, stagger: 0.04, ease: EASE.out,
-        }, 1.0);
+          y: '0%', duration: 0.5, stagger: 0.03, ease: EASE.out,
+        }, 0.6);
       }
       if (l3.length) {
         tl.to(l3, {
-          y: '0%', duration: 0.7, stagger: 0.04, ease: EASE.out,
-        }, 1.0);
+          y: '0%', duration: 0.5, stagger: 0.03, ease: EASE.out,
+        }, 0.6);
       }
 
-      // 1.55s - Description paragraph
+      // 0.95s - Description paragraph
       tl.fromTo(descRef.current,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
-        1.55
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.55 },
+        0.95
       );
 
-      // 1.85s - Buttons: scale stagger
+      // 1.15s - Buttons: scale stagger
       tl.fromTo([btn1Ref.current, btn2Ref.current].filter(Boolean),
-        { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.7, stagger: 0.12, ease: EASE.out },
-        1.85
+        { scale: 0.85, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.5, stagger: 0.08, ease: EASE.out },
+        1.15
       );
 
-      // 2.3s - Scroll indicator
+      // 1.4s - Scroll indicator
       tl.fromTo(scrollIndicatorRef.current,
-        { opacity: 0 }, { opacity: 1, duration: 1 }, 2.3
+        { opacity: 0 }, { opacity: 1, duration: 0.6 }, 1.4
       );
     }, sectionRef);
 

@@ -58,29 +58,29 @@ export default function About() {
     const ctx = gsap.context(() => {
       // Section watermark — large "/ABOUT" clip reveal from right
       gsap.fromTo(watermarkRef.current,
-        { clipPath: 'inset(0 100% 0 0)', scale: 1.08, opacity: 0 },
+        { clipPath: 'inset(0 100% 0 0)', scale: 1.04, opacity: 0 },
         {
           clipPath: 'inset(0 0% 0 0)', scale: 1, opacity: 1,
-          duration: 1.3, ease: EASE.inOut,
+          duration: 0.8, ease: EASE.inOut,
           scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', toggleActions: 'play none none none' },
         }
       );
 
       // Header label + title
       gsap.fromTo(headerRef.current,
-        { y: 50, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.9, ease: EASE.out,
-          scrollTrigger: { trigger: headerRef.current, start: 'top 85%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.6, ease: EASE.out,
+          scrollTrigger: { trigger: headerRef.current, start: 'top 88%', toggleActions: 'play none none none' },
         }
       );
 
       // Profile row (photo + stats card)
       gsap.fromTo(profileRowRef.current,
-        { y: 60, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.85, ease: EASE.out,
-          scrollTrigger: { trigger: profileRowRef.current, start: 'top 88%', toggleActions: 'play none none none' },
+          y: 0, opacity: 1, duration: 0.55, ease: EASE.out,
+          scrollTrigger: { trigger: profileRowRef.current, start: 'top 90%', toggleActions: 'play none none none' },
         }
       );
 
@@ -88,10 +88,10 @@ export default function About() {
       const subSections = [eduRef.current, skillsRef.current, honorsRef.current, certsRef.current].filter(Boolean);
       subSections.forEach((el, i) => {
         gsap.fromTo(el,
-          { y: 40, opacity: 0, scale: 0.96 },
+          { y: 25, opacity: 0, scale: 0.97 },
           {
-            y: 0, opacity: 1, scale: 1, duration: 0.75, ease: EASE.out,
-            scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none none' },
+            y: 0, opacity: 1, scale: 1, duration: 0.5, ease: EASE.out,
+            scrollTrigger: { trigger: el, start: 'top 94%', toggleActions: 'play none none none' },
           }
         );
       });
@@ -342,7 +342,7 @@ export default function About() {
                   display: 'flex', alignItems: 'flex-start', gap: 14,
                   padding: '20px 22px', borderRadius: 14,
                   background: 'var(--bg-card)', border: '1px solid var(--border)',
-                  transition: 'all 0.3s', cursor: 'default',
+                  transition: 'all 0.2s', cursor: 'default',
                 }}
                   onMouseEnter={e => {
                     e.currentTarget.style.borderColor = 'var(--border-light)';
