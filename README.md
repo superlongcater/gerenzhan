@@ -1,16 +1,43 @@
-# React + Vite
+# 王明辉 — AI 编程工程师 · 个人作品集
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> 计算机科学与技术专业 · 熟练运用 AI 工具加速全栈开发
 
-Currently, two official plugins are available:
+## 简介
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+个人简历/作品集网站，展示教育背景、技术栈、项目经验与个人优势。使用 React + Vite 构建，GSAP 驱动动效，Framer Motion 处理交互过渡。
 
-## React Compiler
+## 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| 类别 | 技术 |
+|------|------|
+| 框架 | React 19 + Vite 8 |
+| 动画 | GSAP (ScrollTrigger) + Framer Motion |
+| 图标 | react-icons |
+| 构建 | Oxlint (lint) |
 
-## Expanding the Oxlint configuration
+## 本地运行
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm install
+npm run dev      # 开发服务器
+npm run build    # 生产构建
+npm run preview  # 预览构建产物
+```
+
+## 项目结构
+
+```
+src/
+├── animations/      # GSAP 动画工具函数
+│   └── gsap.js
+├── components/      # 页面组件
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Projects.jsx
+│   ├── Strengths.jsx
+│   └── Contact.jsx
+├── App.jsx
+├── main.jsx
+└── index.css
+```

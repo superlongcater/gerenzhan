@@ -172,7 +172,7 @@ export default function Contact() {
           <a href="mailto:minghui031122@163.com" className="btn btn-primary" style={{ padding: '16px 40px' }}>
             发送邮件 <FiArrowUpRight size={16} />
           </a>
-          <a href="#" className="btn btn-outline" style={{ padding: '16px 40px' }}>
+          <a href="/王明辉个人简历.docx" download className="btn btn-outline" style={{ padding: '16px 40px' }}>
             下载简历
           </a>
         </div>

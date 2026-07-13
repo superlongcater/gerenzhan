@@ -11,7 +11,7 @@ const PROJECTS = [
     subtitle: '基于 YOLOv8 的 Web 应用',
     description: '基于 YOLOv8 训练水稻、小麦专项害虫检测模型，经数据增强优化后检测精度显著提升。使用 Flask + Vue3 搭建 B/S 架构 Web 系统，实现图片、视频、摄像头多源图像实时检测。内置结构化农学知识库与分层规则决策引擎，支持 DeepSeek 大模型辅助通俗解读。',
     tech: ['YOLOv8', 'PyTorch', 'Flask', 'Vue3', 'DeepSeek API'],
-    link: '#',
+    link: 'https://github.com/superlongcater/yolo-agri-pest-detection-system',
     color: '#22d3a0',
   },
   {
@@ -20,7 +20,7 @@ const PROJECTS = [
     subtitle: '仿主流视频平台的全栈应用',
     description: '基于 Vue3 + FastAPI 构建前后端分离应用。前端采用 Pinia、Vite 实现响应式深色主题界面，完成视频列表、播放、搜索、分类、评论点赞、上传分享等核心功能。后端基于 FastAPI、SQLAlchemy 与 SQLite 设计 RESTful 接口，实现视频数据管理、文件上传、播放量统计、用户头像与观看历史等模块。',
     tech: ['Vue3', 'Vite', 'Pinia', 'FastAPI', 'SQLAlchemy', 'SQLite'],
-    link: '#',
+    link: 'https://github.com/superlongcater/SealionHub',
     color: '#a78bfa',
   },
 ];
